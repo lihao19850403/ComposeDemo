@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ComposeDemo</string>
+
+    <string name="cd_expand">Expand</string>
+    <string name="cd_collapse">Collapse</string>
+    <string name="cd_crop_square">Crop</string>
+    <string name="cd_done">Done</string>
+    <string name="cd_event">Event</string>
+    <string name="cd_privacy">Privacy</string>
+    <string name="cd_restore">Restore</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_scaffold">ScaffoldActivity</string>
+    <string name="title_activity_state_recovery_list_saver">StateRecoveryListSaverActivity</string>
+</resources>
