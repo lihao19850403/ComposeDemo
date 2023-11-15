@@ -24,6 +24,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.lihao.composedemo.guesture.MainActivityFreeDrag
+import com.lihao.composedemo.guesture.MainActivityGesture
 import com.lihao.composedemo.intro.MainActivity
 import com.lihao.composedemo.layout.MainActivityLayout
 import com.lihao.composedemo.layout.ScaffoldActivity
@@ -117,12 +119,34 @@ class MainActivity : ComponentActivity() {
             )
             Spacer(modifier = Modifier.height(20.dp))
             Text(
-                text = "6，跳转至传参与&主题页面",
+                text = "6，跳转至传参页面",
                 modifier = Modifier
                     .background(color = Color.Green)
                     .align(alignment = Alignment.CenterHorizontally)
                     .clickable {
                         mContext.startActivity(Intent(mContext, MainActivityLocal::class.java))
+                    }
+                    .padding(all = 10.dp)
+            )
+            Spacer(modifier = Modifier.height(20.dp))
+            Text(
+                text = "7，跳转至手势页面",
+                modifier = Modifier
+                    .background(color = Color.Green)
+                    .align(alignment = Alignment.CenterHorizontally)
+                    .clickable {
+                        mContext.startActivity(Intent(mContext, MainActivityGesture::class.java))
+                    }
+                    .padding(all = 10.dp)
+            )
+            Spacer(modifier = Modifier.height(20.dp))
+            Text(
+                text = "8，跳转至自由拖动页面",
+                modifier = Modifier
+                    .background(color = Color.Green)
+                    .align(alignment = Alignment.CenterHorizontally)
+                    .clickable {
+                        mContext.startActivity(Intent(mContext, MainActivityFreeDrag::class.java))
                     }
                     .padding(all = 10.dp)
             )

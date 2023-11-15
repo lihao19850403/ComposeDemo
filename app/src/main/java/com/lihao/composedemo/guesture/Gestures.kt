@@ -3,7 +3,11 @@ package com.lihao.composedemo.guesture
 import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -20,7 +24,7 @@ fun GestureSample() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxWidth()
     ) {
         ClickableSample()
     }
@@ -33,20 +37,24 @@ fun ClickableSample() {
         text = count.value.toString(),
         textAlign = TextAlign.Center,
         modifier = Modifier
-            .wrapContentSize()
             .background(Color.LightGray)
-            .padding(
-                horizontal = 50.dp,
-                vertical = 40.dp
-            )
 //            .clickable {
 //                count.value++
 //            }
             .pointerInput(Unit) {
                 detectTapGestures(
-                    onPress = { Log.e("stats", "按下") },
+                    // 这里会覆盖掉clickable事件。
+                    onPress = {
+                        Log.e("stats", "按下")
+                        count.value++
+                    },
                     onDoubleTap = { }
                 )
             }
+            .wrapContentSize()
+            .padding(
+                horizontal = 50.dp,
+                vertical = 40.dp
+            )
     )
 }
